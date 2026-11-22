@@ -63,10 +63,7 @@ install_argo:
 	argo version
 
 check_release_version_environment_variable:
-	if [ -z "${RELEASE_VERSION}" ]; then
-	echo "::error::release_version input is required"
-	exit 1
-	fi
+	python3 wif_check.py
 	echo "Using release version: ${RELEASE_VERSION}"
 
 full_test:
